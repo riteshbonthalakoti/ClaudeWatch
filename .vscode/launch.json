@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ClaudeWatch (Debug)",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "ClaudeWatch (Release)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
