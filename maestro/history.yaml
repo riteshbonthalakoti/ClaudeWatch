@@ -1,0 +1,48 @@
+appId: com.claudewatch.claudewatch
+---
+# WP-002: AI Usage History – Maestro UI Test Flow
+# Verifies: app launches, bottom nav works, history screen loads, items visible
+
+- launchApp:
+    clearState: true
+
+# ── Step 1: Verify app launched and Dashboard is visible ─────────────────────
+- assertVisible:
+    text: "ClaudeWatch Dashboard"
+
+- assertVisible:
+    text: "Dashboard"
+
+- assertVisible:
+    text: "History"
+
+# ── Step 2: Navigate to History tab ──────────────────────────────────────────
+- tapOn:
+    text: "History"
+
+# ── Step 3: Verify History screen title is visible ───────────────────────────
+- assertVisible:
+    text: "AI Usage History"
+
+# ── Step 4: Wait for history list to load (loading → success transition) ─────
+- waitForAnimationToEnd
+
+# ── Step 5: Assert at least one history item is visible ──────────────────────
+# The placeholder data always includes Claude provider entries
+- assertVisible:
+    text: "Claude"
+
+# ── Step 6: Assert no empty-state text when items exist ──────────────────────
+- assertNotVisible:
+    text: "No AI interactions yet."
+
+# ── Step 7: Assert token count is visible ────────────────────────────────────
+- assertVisible:
+    text: "tokens"
+
+# ── Step 8: Navigate back to Dashboard ───────────────────────────────────────
+- tapOn:
+    text: "Dashboard"
+
+- assertVisible:
+    text: "ClaudeWatch Dashboard"

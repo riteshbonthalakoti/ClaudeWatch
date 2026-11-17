@@ -1,0 +1,13 @@
+appId: com.example.claudewatch
+---
+- launchApp
+- assertVisible: "Dashboard"
+- tapOn: "Search"
+- assertVisible: "Search prompts and history..."
+- inputText: "Flutter"
+- assertVisible: "Prompt"
+- assertVisible: "History"
+- tapOn: "Clear search"
+- assertVisible: "Start typing to search..."
+- tapOn: "Dashboard"
+- assertVisible: "AI Usage Summary"

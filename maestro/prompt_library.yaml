@@ -1,0 +1,27 @@
+appId: com.example.claudewatch
+---
+- launchApp
+- assertVisible: "Dashboard"
+- tapOn: "Prompts"
+- assertVisible: "Prompt Library"
+- assertVisible: "All"
+- assertVisible: "Favorites"
+- assertVisible: "Coding"
+- assertVisible: "Writing"
+- assertVisible: "Research"
+
+# Test Category Filter
+- tapOn: "Coding"
+- assertVisible: "Flutter Widget Generator"
+- tapOn: "All"
+
+# Test Search
+- tapOn: "Search prompts..."
+- inputText: "Data"
+- assertVisible: "Data Analysis Script"
+- tapOn: "Clear search"
+
+# Test Favorites
+- tapOn: "Favorites"
+- assertVisible: "Flutter Widget Generator"
+- assertVisible: "Blog Post Outline"
